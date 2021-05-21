@@ -3,10 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple JS App</title>
+    <title>Pokédex</title>
+    <link rel="icon" type="img/png" href="img/favicon.svg"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,200;1,400&display=swap" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <header>
+      <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <img src="img/logo.png" width="200" height="100" alt="Pokedex logo" />
+        </a>
+        <form class="form-inline">
+          <input placeholder="Search for a character" onkeyup="myFunction()" size="22" class="form-control" id="searchBar" type="search" value="" aria-label="search">
+          <button class="btn" type="submit" onclick="findPokemon()">Search</button>
+        </form>
+      </nav>
+    </header>
     <script src="js/scripts.js"></script>
   </body>
 </html>
