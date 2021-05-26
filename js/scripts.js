@@ -1,6 +1,5 @@
 let pokemonRepository = (function () {
-  let pokemonList = [
-  { name: "Charmander",
+  let pokemonList = [   { name: "Charmander",
     height: 10
   },
   {
@@ -12,32 +11,15 @@ let pokemonRepository = (function () {
     height: 7
   }];
 
-function add(pokemon) {
-  if (typeof pokemon === "object") {
-    return repository.pushh(pokemon);
-    console.log(repository);
-  } else alert("not possible");
-	}
-}
-function getAll() {
-		return pokemonList;
-	}
-function addListItem(pokemon) {
-  let pokemonList = document.querySelector(".pokemon-list");
-  let listPokemon = document.createElement("li");
-}
-  return {
-    add: function(pokemon) {
-      pokemonList.push(pokemon);
-    },
-    getAll: function() {
-      return pokemonList;
-    }
-  };
+return {
+  add: function(pokemon) {
+    pokemonList.push(pokemon);
+  },
+  getAll: function() {
+    return pokemonList;
+  }
+};
 })();
 
-pokemonRepository.loadList().then(function() {
-	pokemonRepository.getAll().forEach(function (pokemon) {
-		pokemonRepository.addListItem(pokemon);
-	})
-});
+console.log(pokemonRepository.getAll()); // []
+pokemonRepository.add({ name: 'Pokemon' });
