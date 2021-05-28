@@ -22,16 +22,15 @@ let pokemonRepository = (function () {
       console.log("Please use objects to input new pokemon")
     }
   }
-function getall() {
+function getAll() {
   return repository;
 }
 
 function addlistItem(pokemon) {
-  let pokemonList = document.querySelector
-  (".pokemon-list");
+  let pokemonList = document.querySelector(".pokemon-list");
   let listPokemon = document.createElement("li");
 }
-}
+
 return {
   add: add,
   getAll: getAll,
@@ -39,7 +38,11 @@ return {
 };
 })();
 
-document.write(pokemonRepository.getall().foreach(function
+pokemonRepository.getAll().forEach(function
   (pokemon) {
-    pokemonRepository.addlistItem(pokemon);
-  }));
+    if (pokemon.height>10) {
+      document.write('${pokemon.name}, height: ${pokemon.height}. Oh! That is huge "<br>" ')
+} else {
+  document.write('${pokemon.name}, height: ${pokemon.height}.  "<br>" ')
+}
+});
