@@ -31,9 +31,8 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-    console.log(pokemonRepository.loadDetails(pokemon).then(function () {
-      showModal(pokemon));
-    });
+    console.log(pokemon)
+
   }
   function addListItem(pokemon){
     let pokemonList = document.querySelector(".pokemon-list");
@@ -45,17 +44,19 @@ let pokemonRepository = (function () {
     pokemonList.appendChild(listpokemon);
     button.addEventListener('click', function() {
       showDetails(pokemon);
- }
+      });
+  }
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
     showDetails: showDetails
   };
 })();
 
 pokemonRepository.add({ name: "Pikachu", height: 0.3 });
 
+console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function (pokemon) {
   pokemonRepository.addListItem(pokemon);
